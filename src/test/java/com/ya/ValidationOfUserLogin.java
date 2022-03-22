@@ -11,7 +11,7 @@ import static org.junit.Assert.assertFalse;
 public class ValidationOfUserLogin {
 
     private static UserClient userClient = new UserClient();
-    private static User user = User.getRandomUser();
+    private static User user = User.getRandomUserData();
     private String token;
     private int expectedStatus;
     private String expectedErrorMessage;

@@ -16,7 +16,7 @@ public class UserCreateTest {
 
     @Before
     public void setUp(){
-        user = User.getRandomUser();
+        user = User.getRandomUserData();
         userClient = new UserClient();
     }
     @After

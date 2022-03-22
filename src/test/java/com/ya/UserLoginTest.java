@@ -16,7 +16,7 @@ public class UserLoginTest {
 
     @Before
     public void setUp(){
-        user = User.getRandomUser();
+        user = User.getRandomUserData();
         userClient = new UserClient();
         ValidatableResponse response=userClient.create(user);
         token=response.extract().path("accessToken");

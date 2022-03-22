@@ -21,7 +21,7 @@ public class GetOrderListTest {
 
         @Before
         public void setUp() {
-            User user = User.getRandomUser();
+            User user = User.getRandomUserData();
             userClient = new UserClient();
             ingredientClient = new IngredientClient();
             orderClient = new OrderClient();

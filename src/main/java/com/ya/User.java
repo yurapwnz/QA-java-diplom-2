@@ -24,7 +24,7 @@ public class User {
         this.name = name;
     }
     @JsonInclude
-    public static User getRandomUser(){
+    public static User getRandomUserData(){
         final String email = faker.internet().emailAddress();
         final String password = faker.internet().password(6,10);
         final String name = faker.pokemon().name();

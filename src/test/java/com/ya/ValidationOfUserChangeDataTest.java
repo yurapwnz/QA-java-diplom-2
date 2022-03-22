@@ -18,8 +18,8 @@ public class ValidationOfUserChangeDataTest {
 
     @Before
     public void setUp() {
-        user = User.getRandomUser();
-        userData = User.getRandomUser();
+        user = User.getRandomUserData();
+        userData = User.getRandomUserData();
         userClient = new UserClient();
         ValidatableResponse response = userClient.create(user);
         token = response.extract().path("accessToken");

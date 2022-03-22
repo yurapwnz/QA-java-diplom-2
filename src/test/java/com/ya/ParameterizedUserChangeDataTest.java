@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class ParameterizedUserChangeDataTest {
 
     private static UserClient userClient = new UserClient();
-    private static User user = User.getRandomUser();
+    private static User user = User.getRandomUserData();
     private static User userData;
     private String token;
     private int expectedStatus;
@@ -37,7 +37,7 @@ public class ParameterizedUserChangeDataTest {
     @Parameterized.Parameters
     public static Object[][] getTestData(){
         return new Object[][]{
-                {User.getRandomUser(),200,true},
+                {User.getRandomUserData(),200,true},
                 {User.getWithoutEmail(),200,true},
                 {User.getWithoutName(),200,true},
                 {User.getWithoutPassword(),200,true},
@@ -54,6 +54,7 @@ public class ParameterizedUserChangeDataTest {
         ValidatableResponse responseChangeData = userClient.change(userData,token);
         int statusCode = response.extract().statusCode();
         boolean isUserChanged = responseChangeData.extract().path("success");
+
         assertEquals("Courier is not changed",isSuccessChange,isUserChanged);
         assertEquals("Status code is incorrect", expectedStatus,statusCode);
     }
